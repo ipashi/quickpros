@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>QuickPros.com</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+  #profileshow{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+          <header>
+                  <nav>
+                         <div class="menu-icon">
+                              <i class="fa fa-bars fa-2x"></i>
+                        </div>
+                        <div class="logo">
+                              QuickPros
+                        </div>
+                        <div class="hideMenu">
+                              <ul>
+                                    <li><a href="register.html"><button class="btn btn-primary" type="submit">Sign Up</button></a></li>
+                                    <li><a href="About.html"><img src="icon.png"></a></li>
+                              </ul>
+                        </div>
+                  </nav>
+            </header>
+      <br>
+	   <center>
+      <div id="move">
+      <div class="demo-container mdl-grid" id="model">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <div class="demo-crumbs mdl-color-text--grey-500">
+            </div>
+                  <h1>Registration Form</h1>
+        <form enctype="multipart/form-data" method="POST" action="register.php">
+              <div id="profilediv">
+                <input type="FILE" name="photoUpload" id="profile" onchange="preview(event)">
+                <img src="1.png" id="profileshow">
+                <br>
+                <button id="btnprofile">Upload a Profile</button>
+                <script type="text/javascript">
+                  document.getElementById('profile').style.display='none';
+                  document.getElementById('btnprofile').addEventListener('click',function(event){
+                      event.preventDefault();
+                      document.getElementById('profile').click();
+                  });
+
+                  function preview(e){
+                      var srcimage = document.getElementById('profileshow');
+                      srcimage.src = URL.createObjectURL(e.target.files[0]);
+                      console.log(URL.createObjectURL(e.target.files[0]));
+                    }
+                </script>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1" name="firstname">
+                  <label class="mdl-textfield__label" for="sample1">FirstName</label>
+              </div>
+              <br>
+			      	<div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1" name="lastname">
+                  <label class="mdl-textfield__label" for="sample1">LastName</label>
+              </div>
+				      <br>
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1" name="email">
+                  <label class="mdl-textfield__label" for="sample1">Email</label>
+              </div>
+              <br>
+              <div class="mdl-textfield mdl-js-textfield">
+                  <select class="mdl-textfield__input" type="text" id="sample1" name="role">
+                        <option value="faculty">Faculty</option>
+                        <option value="student">Student</option>
+                  </select> 
+                  <label class="mdl-textfield__label" for="sample1">Password</label>
+              </div>
+              <br>
+			      	<div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1" name="passone">
+                  <label class="mdl-textfield__label" for="sample1">Password</label>
+              </div>
+              <br>
+				      <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1" name="passtwo">
+                  <label class="mdl-textfield__label" for="sample1">Confirm Password</label>
+              </div>
+              <br>
+                <button class="btn btn-primary" type="submit">Register</button>
+              <br>
+                
+        </form>
+            <br><br>
+            </div>
+        </div>
+      </div>
+    </center>
+</body>
+</html>
